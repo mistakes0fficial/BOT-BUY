@@ -88,7 +88,7 @@ client.on("interactionCreate", async (interaction) => {
                 embeds: [new Discord.EmbedBuilder()
                     .setColor("Green")
                     .setTitle("ราคายศ")
-                    .setDescription(`เติมเงิน 40 บาท จะได้ยศ\n-> <@&${config.role40}>`)], ephemeral: true
+                    .setDescription(`เติมเงิน 3 บาท จะได้ยศ\n-> <@&${config.role40}>`)], ephemeral: true
             })
         }
     }
@@ -106,9 +106,9 @@ client.on("interactionCreate", async (interaction) => {
 
             tw(config.phone, codeInput).then(async re => {
                 switch (re.amount) {
-                    case 40:
+                    case 3:
                         if (interaction.member.roles.cache.has(config.role40)) {
-                            await interaction.reply({ embeds: [new Discord.EmbedBuilder().setColor("Green").setDescription("เติมเงินสำเร็จ : คุณมียศอยู่แล้ว")], ephemeral: true })
+                            await interaction.reply({ embeds: [new Discord.EmbedBuilder().setColor("Yellow").setDescription("เติมเงินสำเร็จ : คุณมียศอยู่แล้ว")], ephemeral: true })
                             await interaction.guild.channels.cache.get(config.channellog).send({
                                 embeds: [
                                     new Discord.EmbedBuilder()
